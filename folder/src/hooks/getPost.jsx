@@ -11,7 +11,7 @@ const GetPost= () => {
         console.log(token)
         try {
           const response = await axios.get(
-            "https://instagramclone-sxrf.onrender.com/getallpost",
+            "https://instagramclone-sxrf.onrender.com/api/posts/getallpost",
             {
               headers: {
                 "Content-Type": "application/json",
