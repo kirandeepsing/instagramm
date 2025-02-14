@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "start":"npm install && node server.js",
-    "build":"cd frontend/my-react-app && npm install && npm run build"
+    "build":"cd folder && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
