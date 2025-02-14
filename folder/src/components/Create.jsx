@@ -30,7 +30,7 @@ const   Create = () => {
       const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
       // Replace with your backend API URL
-      const response = await axios.post('https://instagramclone-23.onrender.com/create', formData, {
+      const response = await axios.post('https://instagramclone-sxrf.onrender.com/create', formData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Make sure to send the content type as form-data
           Authorization: `Bearer ${token}`,

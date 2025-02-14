@@ -42,7 +42,7 @@ const Post = ({post}) => {
     try {
       const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
-      const response = await axios.put(`https://instagramclone-23.onrender.com/${post._id}/like`,{},
+      const response = await axios.put(`https://instagramclone-sxrf.onrender.com/${post._id}/like`,{},
        {  
          headers: {
           Authorization: `Bearer ${token}`, // Include the token in the headers
@@ -79,7 +79,7 @@ const Post = ({post}) => {
       const userToFollowId = post.author._id; // ID of the user to follow/unfollow
       const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
-      const response = await axios.put(`https://instagramclone-23.onrender.com/follow/${userToFollowId}`,{},
+      const response = await axios.put(`https://instagramclone-sxrf.onrender.com/follow/${userToFollowId}`,{},
        {  
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ const handleDelete = async () => {
   try {
     const token = localStorage.getItem("token"); // Ensure token is stored
     console.log(token)
-    const response = await axios.delete(`https://instagramclone-23.onrender.com/delete/${post._id}`, {
+    const response = await axios.delete(`https://instagramclone-sxrf.onrender.com/delete/${post._id}`, {
       headers: {
         'Content-Type': 'application/json', // Ensure the request has the correct content type
         Authorization: `Bearer ${token}`,
@@ -128,7 +128,7 @@ const handlecomment = async(e) =>{
   try {
     const token = localStorage.getItem("token"); // Ensure token is stored
     console.log(token)
-    const response = await axios.post(`https://instagramclone-23.onrender.com/comment/${post._id}`,{text},{
+    const response = await axios.post(`https://instagramclone-sxrf.onrender.com/comment/${post._id}`,{text},{
       headers: {
         'Content-Type': 'application/json', // If you need to specify the content type
         Authorization: `Bearer ${token}`,

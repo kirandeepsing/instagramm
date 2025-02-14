@@ -19,7 +19,7 @@ const _dirname = path.resolve()
 const app = express();
 const allowedOrigins = [
   "http://localhost:5173",  // Possible new deployment
-  "https://instagramclone-23.onrender.com",  // Possible new deployment
+  "https://instagramclone-sxrf.onrender.com",  // Possible new deployment
   "https://instagramclone-*.onrender.com"  // Future subdomains
 ];
 // Allow requests from specific origins

@@ -15,7 +15,7 @@ const singleUser = () => {
         console.log(token)
         try {
           const response = await axios.get(
-            `https://instagramclone-23.onrender.com/getProfile/${userId}`,
+            `https://instagramclone-sxrf.onrender.com/getProfile/${userId}`,
             {
               headers: {
                 "Content-Type": "application/json",

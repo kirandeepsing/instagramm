@@ -11,7 +11,7 @@ useEffect(() => {
       const token = localStorage.getItem("token"); // Ensure token is stored
         console.log(token)
         try {
-          const response = await axios.get("https://instagramclone-23.onrender.com/getallcomments", {
+          const response = await axios.get("https://instagramclone-sxrf.onrender.com/getallcomments", {
             headers: {
               'Content-Type': 'application/json', // Example header
               Authorization: `Bearer ${token}`,
