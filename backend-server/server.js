@@ -20,7 +20,7 @@ const app = express();
 // Allow requests from specific origins
 app.use(
     cors({
-      origin: process.env.URL, 
+      origin: "https://instagramclone-sxrf.onrender.com",
       methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
       credentials: true, // Allow cookies if needed
       allowedHeaders: ["Content-Type", "Authorization"],
