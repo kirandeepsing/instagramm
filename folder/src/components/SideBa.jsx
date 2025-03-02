@@ -31,16 +31,16 @@ const SideBa = () => {
  
   return (
 <>
-<div className="h-screen w-80 flex flex-col space-y-6 p-4">
+<div className="sideba">
       {logos.map((item, index) => (
         <div key={index} className="flex items-center space-x-2">
           <div>{item.icon}</div>
-          <span className="text-lg font-medium">{item.label}</span>
+          <span className="">{item.label}</span>
         </div>
       ))}
       <div className='flex'>
       <MdOutlineCreateNewFolder/>
-      <h2 onClick={create} className='ml-3  text-lg cursor-pointer font-bold'>create</h2>
+      <h2 onClick={create} className=''>create</h2>
       </div>
       <div className='flex'>
       <ImProfile className='' />

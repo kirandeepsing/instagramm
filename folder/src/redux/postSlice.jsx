@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   posts: [], // An array to hold the posts
   comments:[],
+  bookmark:[],
 };
 
 const postSlice = createSlice({
@@ -15,9 +16,12 @@ const postSlice = createSlice({
     },
     setComment:(state,action) =>{
       state.comments = action.payload;
+    },
+    setBookmarks:(state,action) =>{
+      state.bookmark = action.payload;
     }
   },
 });
 
-export const {setPosts,setComment } = postSlice.actions;
+export const {setPosts,setComment,setBookmarks } = postSlice.actions;
 export default postSlice.reducer;

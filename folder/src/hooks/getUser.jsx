@@ -11,7 +11,7 @@ const GetUser = () => {
           const token = localStorage.getItem("token"); // Ensure token is stored
         console.log(token)
           const response = await axios.get(
-            "https://instagramclone-sxrf.onrender.com/api/users/suggesteduser",
+            " http://localhost:5000/api/users/suggesteduser",
             {
               headers: {
                 "Content-Type": "application/json",

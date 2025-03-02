@@ -16,15 +16,15 @@ const Right = () => {
 
   return (
     <>
-     <div className='right w-screen border-2 text-center'>
+     <div className='right w-screen text-center'>
      <h1 className='mb-10 font-bold underline'>suggested users</h1>
   
       {/* Check if suggestedUser is an array */}
       {Array.isArray(suggestedUser) && suggestedUser.length > 0 ? (
         suggestedUser.map((user, index) => (
           <div className='font-bold flex' key={index}>
-             <img onClick={()=>navigate(`/profile/${user._id}`)} className='size-20 rounded-full' src={user.profilePhoto} alt="" />
-            <p className='ml-10'>{user.username}</p>
+             <img onClick={()=>navigate(`/profile/${user._id}`)} className='size-12 rounded-full' src={user.profilePhoto} alt="" />
+            <p className='ml-10 text-sm'>{user.username}</p>
             {/* Add more fields as needed */}
           </div>
         ))

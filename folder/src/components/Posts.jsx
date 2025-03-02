@@ -3,6 +3,8 @@ import Post from './Post'
 import { useDispatch, useSelector } from 'react-redux'
 import GetPost from '../hooks/getPost'
 import { setPosts } from '../redux/postSlice'
+import SideBa from './SideBa'
+
 
 
 const Posts = () => {
@@ -13,7 +15,8 @@ const Posts = () => {
 
   console.log(posts)
   return (
-    <div className='w-2/6 justify-center items-center flex flex-col border-2 ml-96'>
+    <>
+      <div className='w-2/6 justify-center items-center flex flex-col ml-96'>
       {
         posts.map((p, index)=>{
           return(
@@ -21,10 +24,14 @@ const Posts = () => {
               <div><Post post={p} /></div>
             </div>
           )
-
         })
       }
+       <div className=' border-2 flex-col'>
+  
     </div>
+    </div>
+    </>
+  
   )
 }
 

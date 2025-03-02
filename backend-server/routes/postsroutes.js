@@ -14,7 +14,7 @@ router.post('/comment/:id',protect, addComment);
 router.get('/getcomment/:id', getComments);
 router.delete('/delete/:id',protect, deletePost);
 router.get('/getallcomments', getAllComments);
-router.post('/addbookmark/:id',protect,addBookmark);
+router.put('/addbookmark/:id',protect,addBookmark);
 router.get('/getbook',protect,getBookmarkedPosts);
 
 module.exports = router;

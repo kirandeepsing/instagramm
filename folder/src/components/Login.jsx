@@ -5,9 +5,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link, useNavigate } from "react-router-dom";
 import { setUser } from "../redux/userSlice";
 import { useDispatch } from "react-redux";
+import socket from "../socket";
 
 
 const Register = () => {
+  const { user } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (user) {
+      socket.emit("join", user._id);
+    }
+  }, [user]);
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
   const [formData, setFormData] = useState({
@@ -24,7 +32,7 @@ const Register = () => {
     e.preventDefault();
     console.log("Form Data:", formData);
     try {
-        const response = await axios.post("https://instagramclone-sxrf.onrender.com/api/users/login",formData,{
+        const response = await axios.post(" http://localhost:5000/api/users/login",formData,{
             headers: {
                 "Content-Type": "application/json",
               },
