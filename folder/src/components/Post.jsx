@@ -194,20 +194,12 @@ const Post = ({ post }) => {
 
   return (
     <>
-      <div className='flex'>
-        <Link to={"/sidebar"} className='main hidden text-2xl'>
-          main section
-        </Link>
-        <Link to={"/Suggested"} className='maini hidden text-2xl'>
-          suggested user
-        </Link>
-      </div>
-      <div className='post mt-8 w-screen h-auto flex justify-center items-center flex-col text-lg font-semibold'>
+      <div className='post border-2 w-[600px] mr-32  sm:w-[500px] sm:ml-96 md:w-[550px] md:ml-40 xl:w-[600px]  sm:border  mt-8 h-auto flex justify-center items-center flex-col text-lg font-semibold'>
         <ToastContainer />
         <div className='posting w-96 flex '>
           <div className='flex h-10 w-42 flex-row'>
             <img className='imge h-10 rounded-full w-10 ' src={post.author.profilePhoto} alt="" />
-            <p className='text-lg md:text-blue-500'>{post.author.username}</p>
+            <p className='text-3xl sm:!text-4xl  md:text-blue-500'>{post.author.username}</p>
           </div>
           <div>
             <div>
@@ -222,19 +214,19 @@ const Post = ({ post }) => {
                   <button onClick={handlefollowandunfollow} className=' text-lg  border-b rounded-lg h-10 w-96 mt-3'>Cancel</button>
                 </DialogContent>
               </Dialog>
-              <p className='text-sm text-gray'> caption:{post.caption}</p>
+              <p className='text-3xl sm:!text-4xl mt-5 text-gray '> caption:{post.caption}</p>
             </div>
           </div>
 
         </div>
-        <img className='imga h-96 mt-4 w-96' src={post.images[0]} alt="" />
+        <img className='imga h-96 mt-4 w-[600px] sm:w-[700px] sm:border-red-800' src={post.images[0]} alt="" />
         <div className='like flex  space-x-8 my-4'>
           <div className='like'>
-            <AiOutlineLike style={{ color: liked ? "red" : "black", cursor: "pointer" }} onClick={handlelikeanddislike} className='like-icon cursor-pointer' size={30} />
+            <AiOutlineLike  style={{ color: liked ? "red" : "black", cursor: "pointer" }} onClick={handlelikeanddislike} className='like-icon size-12 cursor-pointer' size={30} />
             <span className='text-sm'>{likecounter} likes  </span>
           </div>
 
-          <FaRegComment className='like-icon' onClick={handleOpen} size={30} />
+          <FaRegComment className='like-icon size-12' onClick={handleOpen} size={30} />
           <Dialog className='dialog' open={isDialogOpen} onClose={handleClose}>
             <DialogTitle>Write a Comment</DialogTitle>
             <DialogContent>
@@ -266,7 +258,7 @@ const Post = ({ post }) => {
             </DialogContent>
           </Dialog>
           <div>
-            <FaBookmark onClick={handlebookmark} className='like-icon ml-48 cursor-pointer' size={27} />
+            <FaBookmark onClick={handlebookmark} className='like-icon ml-48 size-12 cursor-pointer' size={27} />
           </div>
           <div></div>
         </div>

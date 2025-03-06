@@ -16,7 +16,7 @@ const Right = () => {
 
   return (
     <>
-     <div className='right w-screen text-center'>
+     <div className='right hidden sm:!block w-screen text-center sm:ml-96 md:ml-32 ' >
      <h1 className='mb-10 font-bold underline'>suggested users</h1>
   
       {/* Check if suggestedUser is an array */}

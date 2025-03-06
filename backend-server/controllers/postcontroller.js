@@ -193,11 +193,6 @@ const likepost = async (req, res) => {
         $pull: { likes: userId },
       });
 
-      // Emit real-time event for "unlike"
-      req.io.emit("sendNotification", {
-        receiverId: post.author.toString(),
-        message: `${req.user.username} unliked your post!`,
-      });
       return res.status(200).json({ success: true, message: 'Like removed' });
     }
 
@@ -205,10 +200,6 @@ const likepost = async (req, res) => {
     // Add like
     await Post.findByIdAndUpdate(postId, {
       $addToSet: { likes: userId },
-    });
-    req.io.emit("sendNotification", {
-      receiverId: post.author.toString(),
-      message: `${req.user.username} liked your post!`,
     });
     return res.status(200).json({
       success: true,

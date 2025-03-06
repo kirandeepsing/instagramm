@@ -31,7 +31,7 @@ const SideBar = () => {
  
   return (
 <>
-<div className="sidebar h-screen fixed border-r border-gray-400 w-80 flex flex-col space-y-6 p-4">
+<div className=" bg-red-600 hidden mt-36 sm:fixed sm:mt-0 text-red-50 sm:!block md:block sm:bg-black md:bg-green-300 h-screen    border-r border-gray-400 w-80 flex-col space-y-6 p-4">
       {logos.map((item, index) => (
         <div key={index} className="flex items-center space-x-2">
           <div>{item.icon}</div>
@@ -40,13 +40,13 @@ const SideBar = () => {
       ))}
       <div className='flex'>
       <MdOutlineCreateNewFolder/>
-      <h2 onClick={create} className='ml-3 text-lg cursor-pointer font-bold'>create</h2>
+      <h2 onClick={create} className='ml-3 text-3xl sm:text-lg md:text-lg sm:text-green-200 cursor-pointer font-bold'>create</h2>
       </div>
       <div className='flex'>
       <ImProfile className='' />
-      <h2 onClick={()=>navigate(`/profile/${user.id}`)} className='ml-3 mb-10 text-lg cursor-pointer font-bold'>Profile</h2>
+      <h2  onClick={()=>navigate(`/profile/${user.id}`)} className='ml-3 text-2xl sm:text-lg bg-slate-400 sm:bg-orange-400  mb-10 cursor-pointer font-bold'>Profile</h2>
       </div>
-      <h2>authencticted:
+      <h2 className=" sm:text-4xl md:text-2xl md:bg-slate-500 sm:bg-red-400">authencticted:
         <br /> {user.username} </h2>
     </div>
 </>
