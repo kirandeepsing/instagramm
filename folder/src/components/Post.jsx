@@ -11,7 +11,6 @@ import { setComment, setPosts } from '../redux/postSlice';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from "@mui/material";
 import getComment from '../hooks/getComment';
 import GetPost from '../hooks/getPost';
-import "./App.css"
 import { Link } from 'react-router-dom';
 import { BsThreeDots } from "react-icons/bs";
 import SideBa from './SideBa';
