@@ -11,6 +11,7 @@ import { setComment, setPosts } from '../redux/postSlice';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from "@mui/material";
 import getComment from '../hooks/getComment';
 import GetPost from '../hooks/getPost';
+import "./App.css"
 import { Link } from 'react-router-dom';
 import { BsThreeDots } from "react-icons/bs";
 import SideBa from './SideBa';
@@ -84,7 +85,7 @@ const Post = ({ post }) => {
     try {
       const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
-      const response = await axios.put(`https://your-backend-service.onrender.com/api/posts/addbookmark/${post._id}`, {},
+      const response = await axios.put(`http://localhost:5000/api/posts/addbookmark/${post._id}`, {},
         {
           headers: {
             Authorization: `Bearer ${token}`, // Include the token in the headers
@@ -116,7 +117,7 @@ const Post = ({ post }) => {
       const userToFollowId = post.author._id; // ID of the user to follow/unfollow
       const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
-      const response = await axios.put(`https://your-backend-service.onrender.com/api/users/follow/${userToFollowId}`, {},
+      const response = await axios.put(`http://localhost:5000/api/users/follow/${userToFollowId}`, {},
         {
           headers: {
             'Content-Type': 'application/json',
@@ -139,7 +140,7 @@ const Post = ({ post }) => {
     try {
       const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
-      const response = await axios.delete(`https://your-backend-service.onrender.com/api/posts/delete/${post._id}`, {
+      const response = await axios.delete(` http://localhost:5000/api/posts/delete/${post._id}`, {
         headers: {
           'Content-Type': 'application/json', // Ensure the request has the correct content type
           Authorization: `Bearer ${token}`,
@@ -165,7 +166,7 @@ const Post = ({ post }) => {
     try {
       const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
-      const response = await axios.post(`https://your-backend-service.onrender.com/api/posts/comment/${post._id}`, { text }, {
+      const response = await axios.post(` http://localhost:5000/api/posts/comment/${post._id}`, { text }, {
         headers: {
           'Content-Type': 'application/json', // If you need to specify the content type
           Authorization: `Bearer ${token}`,
