@@ -12,13 +12,8 @@ import { useSelector } from 'react-redux';
 import Profile from './Profile';
 
 const logos = [
-  { icon: <FaInstagramSquare size={50} />, label: "Instagram" },
-  { icon: <FaHome />, label: "Home" },
-  { icon: <FaSearch />, label: "Search" },
-  { icon: <MdExplore />, label: "Explore" },
-  { icon: <BsCameraReelsFill />, label: "Reels" },
-  { icon: <LuMessageSquare />, label: "Messages" },
-  { icon: <IoLogOut />, label: "Logout" },
+  { icon: <FaHome className='size-24' />,  label: "" },
+  { icon: <BsCameraReelsFill className='size-20' />, label: "" },
 ];  
 
 const SideBa = () => {
@@ -31,7 +26,7 @@ const SideBa = () => {
  
   return (
 <>
-<div className="sideba">
+<div className="sideba sticky bottom-0 h-[100px] border-red-950 bg-white w-[900px] text-3xl flex justify-between  border-2 sm:!hidden">
       {logos.map((item, index) => (
         <div key={index} className="flex items-center space-x-2">
           <div>{item.icon}</div>
@@ -39,14 +34,13 @@ const SideBa = () => {
         </div>
       ))}
       <div className='flex'>
-      <MdOutlineCreateNewFolder/>
-      <h2 onClick={create} className=''>create</h2>
+      <MdOutlineCreateNewFolder  onClick={create} className='size-24'/>
+      <h2 className=''></h2>
       </div>
       <div className='flex'>
-      <ImProfile className='' />
-      <h2 onClick={()=>navigate(`/profile/${user.id}`)} className='ml-3 mb-10 text-lg cursor-pointer font-bold'>Profile</h2>
+      <ImProfile onClick={()=>navigate(`/profile/${user.id}`)} className='size-20' />
+      <h2  className='ml-3 mb-10 text-lg cursor-pointer font-bold'></h2>
       </div>
-      <h2>authencticted user : {user.username} </h2>
     </div>
 </>
  

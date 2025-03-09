@@ -16,7 +16,7 @@ const SuggestedUse = () => {
 
   return (
     <>
-     <div className=' w-screenborder-2 text-center'>
+     <div className=' w-screenborder-2 sm:ml-96 text-center'>
      <h1 className='mb-10 font-bold underline'>suggested users</h1>
   
       {/* Check if suggestedUser is an array */}

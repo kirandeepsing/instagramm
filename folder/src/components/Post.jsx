@@ -194,39 +194,44 @@ const Post = ({ post }) => {
 
   return (
     <>
-      <div className='post border-2 w-[600px] mr-32  sm:w-[500px] sm:ml-96 md:w-[550px] md:ml-40 xl:w-[600px]  sm:border  mt-8 h-auto flex justify-center items-center flex-col text-lg font-semibold'>
+      <div className='post border-2 w-[860px] h-auto sm:w-[700px]  sm:ml-96 md:w-[550px] md:ml-40 xl:w-[600px]  sm:border  mt-8 flex justify-center items-center flex-col text-lg font-semibold'>
         <ToastContainer />
         <div className='posting w-96 flex '>
-          <div className='flex h-10 w-42 flex-row'>
-            <img className='imge h-10 rounded-full w-10 ' src={post.author.profilePhoto} alt="" />
-            <p className='text-3xl sm:!text-4xl  md:text-blue-500'>{post.author.username}</p>
+          <div className='flex h-10 border flex-row'>
+            <img className='imge h-10  rounded-full w-10 ' src={post.author.profilePhoto} alt="" />
+            <p className='text-3xl  border border-red-800 sm:!text-4xl  md:!text-xl md:text-blue-500'>{post.author.username}</p>
           </div>
           <div>
             <div>
-              <BsThreeDots className='three ml-40 cursor-pointer' onClick={handleopen} />
-              <Dialog className='dialog' open={isdialogOpen} onClose={handleclose}>
+              <BsThreeDots className='three size-20 sm:!size-16 ml-40 md:!size-8 cursor-pointer' onClick={handleopen} />
+              <Dialog className='' open={isdialogOpen} onClose={handleclose}>
                 <DialogTitle></DialogTitle>
                 <DialogContent className='flex flex-col'>
                   {
-                    user.username === post.author.username && <button className='border-b text-lg rounded-lg h-10 w-96' onClick={handleDelete} type='submit'>Delete</button>
+                    user.username === post.author.username && <button className='border-b text-4xl sm:text-lg md:text-lg  rounded-lg h-10 w-96' onClick={handleDelete} type='submit'>Delete</button>
                   }
-                  <button onClick={handlefollowandunfollow} className=' text-lg border-b rounded-lg h-10 w-96 mt-3'>{follow ? "Unfollow" : "Follow"}</button>
-                  <button onClick={handlefollowandunfollow} className=' text-lg  border-b rounded-lg h-10 w-96 mt-3'>Cancel</button>
+                  <button onClick={handlefollowandunfollow} className=' text-4xl sm:text-lg md:text-lg  border-b rounded-lg h-10 w-96 mt-3'>{follow ? "Unfollow" : "Follow"}</button>
+                  <button onClick={handlefollowandunfollow} className=' text-4xl sm:text-lg md:text-lg  border-b rounded-lg h-10 w-96 mt-3'>Cancel</button>
+                       <div className='flex border'>
+                          <Link to={"/Suggested"} className='text-4xl sm:text-lg md:text-lg text-center border-b rounded-lg h-10 w-96 mt-3'>
+                            users
+                          </Link>
+                        </div>
                 </DialogContent>
               </Dialog>
-              <p className='text-3xl sm:!text-4xl mt-5 text-gray '> caption:{post.caption}</p>
+              <p className='text-3xl ml-40  sm:!ml-0 w-[200px]  border-2 sm:!text-4xl md:!text-lg mt-5 text-gray '> caption:{post.caption}</p>
             </div>
           </div>
 
         </div>
-        <img className='imga h-96 mt-4 w-[600px] sm:w-[700px] sm:border-red-800' src={post.images[0]} alt="" />
+        <img className='imga h-[900px] mt-4 w-[800px] sm:w-[700px] sm:h-[600px] md:h-[400px] sm:border-red-800' src={post.images[0]} alt="" />
         <div className='like flex  space-x-8 my-4'>
           <div className='like'>
-            <AiOutlineLike  style={{ color: liked ? "red" : "black", cursor: "pointer" }} onClick={handlelikeanddislike} className='like-icon size-12 cursor-pointer' size={30} />
-            <span className='text-sm'>{likecounter} likes  </span>
+            <AiOutlineLike  style={{ color: liked ? "red" : "black", cursor: "pointer" }} onClick={handlelikeanddislike} className='like-icon size-20 sm:!size-16 md:!size-8  cursor-pointer' size={30} />
+            <span className='text-3xl sm:text-2xl md:text-lg'>{likecounter} likes  </span>
           </div>
 
-          <FaRegComment className='like-icon size-12' onClick={handleOpen} size={30} />
+          <FaRegComment className='like-icon size-20 sm:!size-16 md:!size-8' onClick={handleOpen} size={30} />
           <Dialog className='dialog' open={isDialogOpen} onClose={handleClose}>
             <DialogTitle>Write a Comment</DialogTitle>
             <DialogContent>
@@ -258,7 +263,7 @@ const Post = ({ post }) => {
             </DialogContent>
           </Dialog>
           <div>
-            <FaBookmark onClick={handlebookmark} className='like-icon ml-48 size-12 cursor-pointer' size={27} />
+            <FaBookmark onClick={handlebookmark} className='like-icon ml-48 size-20 sm:!size-16 md:!size-8 cursor-pointer' size={27} />
           </div>
           <div></div>
         </div>

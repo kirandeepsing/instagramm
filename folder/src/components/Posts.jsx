@@ -5,6 +5,7 @@ import GetPost from '../hooks/getPost'
 import { setPosts } from '../redux/postSlice'
 import SideBa from './SideBa'
 import { Link } from 'react-router-dom'
+import Story from './Story'
 
 
 
@@ -19,18 +20,10 @@ const Posts = () => {
     <>
    
       <div className='w-2/6 justify-center items-center flex flex-col ml-96'>
-      <div className='h-20 w-[880px] text-center text-4xl bg-slate-800'>
-      <h1 className='text-red-50'>instagram</h1>
+      <div className='h-20 w-[880px] text-center text-4xl sm:hidden hidden bg-slate-800'>
+      <h1 className='text-red-50 hidden sm:hidden'>instagram</h1>
     </div>
-    
-      <div className='flex border'>
-        <Link to={"/sidebar"} className='main  sm:hidden sm:text-black text-5xl'>
-          main section
-        </Link>
-        <Link to={"/Suggested"} className='maini ml-8 sm:hidden  text-5xl'>
-          suggested user
-        </Link>
-      </div>
+    <Story/>
       {
         posts.map((p, index)=>{
           return(
@@ -43,7 +36,9 @@ const Posts = () => {
        <div className=' border-2 flex-col'>
   
     </div>
+    <SideBa/>
     </div>
+  
     </>
   
   )
