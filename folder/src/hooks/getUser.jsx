@@ -11,7 +11,7 @@ const GetUser = () => {
           const token = localStorage.getItem("token"); // Ensure token is stored
         console.log(token)
           const response = await axios.get(
-            " http://localhost:5000/api/users/suggesteduser",
+            "https://your-backend-service.onrender.com/api/users/suggesteduser",
             {
               headers: {
                 "Content-Type": "application/json",

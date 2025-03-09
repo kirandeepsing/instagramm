@@ -15,7 +15,7 @@ const singleUser = () => {
         console.log(token)
         try {
           const response = await axios.get(
-            ` http://localhost:5000/api/users/getProfile/${userId}`,
+            `https://your-backend-service.onrender.com/api/users/getProfile/${userId}`,
             {
               headers: {
                 "Content-Type": "application/json",

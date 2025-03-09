@@ -11,7 +11,7 @@ const GetPost= () => {
         console.log(token)
         try {
           const response = await axios.get(
-            " http://localhost:5000/api/posts/getallpost",
+            "https://your-backend-service.onrender.com/api/posts/getallpost",
             {
               headers: {
                 "Content-Type": "application/json",

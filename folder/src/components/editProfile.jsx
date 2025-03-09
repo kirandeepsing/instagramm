@@ -29,7 +29,7 @@ const EditProfile = () => {
       const token = localStorage.getItem("token"); // Ensure token is stored
       console.log(token)
       // Replace with your backend API URL
-      const response = await axios.put(' http://localhost:5000/api/users/edit', formData, {
+      const response = await axios.put('https://your-backend-service.onrender.com/api/users/edit', formData, {
         headers: {
         },
         withCredentials: true, // Include credentials (cookies/tokens) with the request

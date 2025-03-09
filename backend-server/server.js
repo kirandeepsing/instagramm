@@ -21,7 +21,7 @@ const app = express();
 // Enable CORS for Express routes
 app.use(
   cors({
-    origin: "http://localhost:5173", // Must be your frontend URL, not "*"
+    origin: "https://instagramm-1gmf.onrender.com", // Must be your frontend URL, not "*"
     credentials: true, // Important: Allows cookies & authentication headers
   })
 );
